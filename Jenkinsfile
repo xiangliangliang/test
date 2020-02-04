@@ -1,6 +1,8 @@
 pipeline {
-	agent {}
-	
+	agent {
+			label 'master'
+			}
+
 	options { 
 		//disableConcurrentBuilds() 
 		buildDiscarder(logRotator(numToKeepStr: '10'))
