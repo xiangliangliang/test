@@ -74,7 +74,7 @@ pipeline {
 			always { 
 				echo 'I will always say Hello again!'
 				archiveArtifacts 'test/2020*'
-				emailext body: 'hello', subject: 'env.BUILD_URL', to: '284604666@qq.com'
+				emailext body: 'hello', subject: "${BUILD_URL}", to: '284604666@qq.com'
 			}
 		}
 }
