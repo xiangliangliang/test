@@ -29,7 +29,7 @@ pipeline {
 					script{
 						cleanWs()
 						def d = new Date().toString().split()
-							BUILD_DISPLAY_NAME = ${d}
+						BUILD_DISPLAY_NAME = "${d}"
 						
 					}
 				}
