@@ -29,8 +29,8 @@ pipeline {
 					script{
 						cleanWs()
 						def d = new Date().toString().split()
-						echo "${d}"
-						currentBuild.description = "${d}"
+						echo "${d[1..3]}"
+						currentBuild.description = "${d[1..3]} ${BRANCH}"
 						env.BUILD_DISPLAY_NAME = "${d}"
 						
 					}
