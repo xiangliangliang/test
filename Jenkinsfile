@@ -9,7 +9,7 @@ pipeline {
 		timestamps()	
 		}
 	
-	 parameters {
+	parameters {
 		gitParameter(branch: '',
                      branchFilter: 'origin/(.*)',
                      defaultValue: 'master',
@@ -21,6 +21,11 @@ pipeline {
                      tagFilter: '*',
                      type: 'PT_BRANCH')
 	  }
+	  
+	triggers {
+	  pollSCM '''TZ=Asia/Shanghai
+	H/2 * * * *'''
+	}	
 	
 	stages {
 
