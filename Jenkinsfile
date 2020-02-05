@@ -108,7 +108,7 @@ pipeline {
             					</td>
         					</tr>
     					</table>
-				   </body>'''
+				   </body>''',
 				subject: "[Jenkins- ${currentBuild.result}]: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
 				to: '284604666@qq.com'
 			}
