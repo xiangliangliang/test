@@ -24,7 +24,7 @@ pipeline {
 	  
 	triggers {
 	  //pollSCM '''TZ=Asia/Shanghai	H/2 * * * *'''
-	  triggers { upstream(upstreamProjects: '01_pipeline', threshold: hudson.model.Result.FAILURE) }
+	  upstream(upstreamProjects: '01_pipeline', threshold: hudson.model.Result.FAILURE)
 	}	
 	
 	stages {
