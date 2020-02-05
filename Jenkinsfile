@@ -86,7 +86,8 @@ pipeline {
 				echo 'I will always say Hello again!'
 				echo "current build status: ${currentBuild.result}"
 				archiveArtifacts 'test/2020*'
-				emailext body: "${FILE,path="jenkins-matrix-email-html.template"}",
+				
+				emailext body: '${FILE,path="jenkins-matrix-email-html.template"}',
 				subject: "[Jenkins- ${currentBuild.result}]: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
 				to: '284604666@qq.com'
 			}
