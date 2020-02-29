@@ -61,7 +61,8 @@ pipeline {
 		
 		stage('Checkout') {
 			steps {
-				script{
+				script{ 
+					/*
 					checkout([$class: 'GitSCM', branches: [[name: "${params.BRANCH}"]], 
 						doGenerateSubmoduleConfigurations: false, 
 						extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'test']], 
@@ -69,6 +70,13 @@ pipeline {
 						userRemoteConfigs: [[credentialsId: 'github_test', 
 						url: 'git@github.com:xiangliangliang/test.git']]])
 					}
+					*/
+					
+					checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+						  doGenerateSubmoduleConfigurations: false, 
+						  extensions: [[$class: 'CloneOption', honorRefspec: true, noTags: false, reference: '', shallow: true], [$class: 'CheckoutOption']], 
+						  submoduleCfg: [], 
+						  userRemoteConfigs: [[credentialsId: 'github_test', url: 'git@github.com:xiangliangliang/test.git']]])
 				
 					bat label: '', script: '''cd test
 									dir'''
@@ -80,11 +88,13 @@ pipeline {
 	post { 
 			always { 
 				echo 'I will always say Hello again!'
+				/*
 				archiveArtifacts 'test/2020*'
 				emailext body: """<p>Jenkins: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
                                 <p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>""",
 				subject: "[Jenkins]: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
 				to: '284604666@qq.com'
+				*/
 			}
 		}
 }
