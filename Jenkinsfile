@@ -93,6 +93,7 @@ pipeline {
 		always { 
 			echo 'I will always say Hello again!'
 			archiveArtifacts '2020*'
+			cleanWs(patterns: [[pattern: 'thisis*', type: 'INCLUDE']])
 			/*
 			archiveArtifacts 'test/2020*'
 			emailext body: """<p>Jenkins: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
