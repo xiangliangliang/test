@@ -92,9 +92,9 @@ pipeline {
 	post { 
 		always { 
 			echo 'I will always say Hello again!'
-			
-			archiveArtifacts 'test/2020*'
+			archiveArtifacts '2020*'
 			/*
+			archiveArtifacts 'test/2020*'
 			emailext body: """<p>Jenkins: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
 							<p>Check console output at "<a href="${env.BUILD_URL}">${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>"</p>""",
 			subject: "[Jenkins]: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]",
