@@ -1,3 +1,33 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@xiangliangliang 
+Learn Git and GitHub without any code!
+Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
+
+Read the guide
+
+xiangliangliang
+/
+test
+ Watch 0
+ Star 0  Fork 0
+ Code  Issues 0  Pull requests 2  Actions  Projects 0  Wiki  Security  Insights  Settings
+Branch: master 
+test/Jenkinsfile
+Find file Copy path
+@xiangliangliang xiangliangliang modify structure
+066caa8 now
+1 contributor
+104 lines (90 sloc)  2.62 KB
+RawBlameHistory
+    
 pipeline {
 	agent {
 			label 'master'
@@ -86,7 +116,6 @@ pipeline {
 			}
 		}		
 		
-	}
 	
 	post { 
 			always { 
@@ -100,5 +129,7 @@ pipeline {
 				*/
 			}
 		}
+	}
 }
+
 
