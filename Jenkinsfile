@@ -29,7 +29,9 @@ pipeline {
 					script{
 						cleanWs()
 						script{
-							def d = new Date().toString().split()
+							//def d = new Date().toString().split()
+							def d = new Date().format('yyyy-MM-dd HH:mm:ss')
+							
 							BUILD_DISPLAY_NAME = ${d}
 						}
 						 
