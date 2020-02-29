@@ -63,6 +63,7 @@ pipeline {
 			steps {
 				script{ 
 					/*
+					println " ===== > i am in the unused block <=========== "
 					checkout([$class: 'GitSCM', branches: [[name: "${params.BRANCH}"]], 
 						doGenerateSubmoduleConfigurations: false, 
 						extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: 'test']], 
@@ -72,7 +73,7 @@ pipeline {
 					}
 					*/
 					
-					checkout([$class: 'GitSCM', branches: [[name: '*/master']], 
+					checkout([$class: 'GitSCM', branches: [[name: "${params.BRANCH}"]], 
 						  doGenerateSubmoduleConfigurations: false, 
 						  extensions: [[$class: 'CloneOption', honorRefspec: true, noTags: false, reference: '', shallow: true], [$class: 'CheckoutOption']], 
 						  submoduleCfg: [], 
