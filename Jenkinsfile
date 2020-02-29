@@ -1,4 +1,5 @@
 pipeline {
+
 	agent {
 			label 'master'
 			}
@@ -9,7 +10,7 @@ pipeline {
 		timestamps()	
 		}
 	
-	 parameters {
+	parameters {
 		gitParameter(branch: '',
                      branchFilter: 'origin/(.*)',
                      defaultValue: 'master',
@@ -86,8 +87,7 @@ pipeline {
 			}
 		}		
 		
-	
-	post { 
+		post { 
 			always { 
 				echo 'I will always say Hello again!'
 				/*
