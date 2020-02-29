@@ -71,8 +71,8 @@ pipeline {
 						submoduleCfg: [], 
 						userRemoteConfigs: [[credentialsId: 'github_test', 
 						url: 'git@github.com:xiangliangliang/test.git']]])
-					}
 					*/
+					
 					
 					checkout([$class: 'GitSCM', branches: [[name: "${params.BRANCH}"]], 
 						  doGenerateSubmoduleConfigurations: false, 
@@ -82,6 +82,7 @@ pipeline {
 				
 					bat label: '', script: '''cd test
 									dir'''
+				}
 			}
 		}		
 		
