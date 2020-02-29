@@ -30,6 +30,7 @@ pipeline {
 						cleanWs()
 						script{
 							//def d = new Date().toString().split()
+							println " here is the datetime"
 							def d = new Date().format('yyyy-MM-dd HH:mm:ss')
 							println d
 							BUILD_DISPLAY_NAME = ${d}
